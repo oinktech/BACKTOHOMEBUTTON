@@ -1,3 +1,12 @@
+// 動態加載 Boxicons 圖標庫
+(function loadBoxicons() {
+    const link = document.createElement('link');
+    link.href = 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+})();
+
+// 創建回到首頁按鈕
 (function createHomeButton(config = {}) {
     // 設定預設值
     const defaults = {
@@ -12,6 +21,7 @@
         right: '30px',
         iconSize: '26px',
         textSize: '12px',
+        textColor: '#00BFFF', // 文字顏色設置
         transition: '0.3s ease'
     };
 
@@ -35,7 +45,7 @@
             width: ${settings.width};
             height: ${settings.height};
             background: ${settings.backgroundColor};
-            color: white;
+            color: ${settings.textColor}; /* 文字顏色設定 */
             border-radius: ${settings.borderRadius};
             font-size: ${settings.fontSize};
             box-shadow: ${settings.boxShadow};
@@ -113,7 +123,7 @@
     window.addEventListener('scroll', function() {
         const scrollY = window.scrollY;
 
-        if (scrollY > 100) {
+        if (scrollY > 300) {
             homeButton.classList.add('show');
             homeButton.style.animation = 'fadeIn 0.5s ease-in-out forwards';
         } else {
@@ -126,4 +136,20 @@
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-})(/* 默認配置或用戶輸入的配置 */);
+})(/* 配置參數，例如：
+{
+    width: '70px',
+    height: '70px',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    hoverBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderRadius: '8px',
+    fontSize: '14px',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    bottom: '20px',
+    right: '20px',
+    iconSize: '20px',
+    textSize: '10px',
+    textColor: '#00BFFF', // 文字顏色
+    transition: '0.2s ease'
+}
+*/);
