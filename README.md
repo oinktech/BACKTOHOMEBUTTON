@@ -1,4 +1,4 @@
-# Back to Home Button
+### Back to Home Button
 
 ## 語言選擇 / Language Selection
 
@@ -40,6 +40,7 @@
             right: '30px',
             iconSize: '26px',
             textSize: '12px',
+            textColor: '#00BFFF', // 文字顏色
             transition: '0.3s ease'
         };
 
@@ -62,7 +63,7 @@
                 width: ${settings.width};
                 height: ${settings.height};
                 background: ${settings.backgroundColor};
-                color: white;
+                color: ${settings.textColor}; /* 文字顏色設置 */
                 border-radius: ${settings.borderRadius};
                 font-size: ${settings.fontSize};
                 box-shadow: ${settings.boxShadow};
@@ -166,6 +167,7 @@
         right: '20px',
         iconSize: '20px',
         textSize: '10px',
+        textColor: '#00BFFF', // 文字顏色
         transition: '0.2s ease'
     }
     */);
@@ -189,6 +191,7 @@
             right: '20px',
             iconSize: '20px',
             textSize: '10px',
+            textColor: '#00BFFF', // 文字顏色
             transition: '0.2s ease'
         };
 
@@ -205,18 +208,21 @@
 
 ### 配置參數說明
 
-- `width`：按鈕的寬度，預設為 `80px`。
-- `height`：按鈕的高度，預設為 `80px`。
-- `backgroundColor`：按鈕的背景顏色，預設為 `rgba(255, 255, 255, 0.2)`。
-- `hoverBackgroundColor`：懸浮時的背景顏色，預設為 `rgba(255, 255, 255, 0.4)`。
-- `borderRadius`：按鈕的邊框圓角，預設為 `12px`。
-- `fontSize`：文字的字體大小，預設為 `16px`。
-- `boxShadow`：按鈕的陰影效果，預設為 `0 8px 20px rgba(0, 0, 0, 0.1)`。
-- `bottom`：按鈕距離底部的距離，預設為 `30px`。
-- `right`：按鈕距離右邊的距離，預設為 `30px`。
-- `iconSize`：圖標的大小，預設為 `26px`。
-- `textSize`：文字的大小，預設為 `12px`。
-- `transition`：樣式過渡效果的時間，預設為 `0.3s ease`。
+- `width`: 按鈕的寬度，預設為 `80px`。
+- `height`: 按鈕的高度，預設為 `80px`。
+- `backgroundColor`: 按鈕的背景顏色，預設為 `rgba(255, 255, 255, 0.2)`。
+- `hoverBackgroundColor`: 懸浮時的背景顏色，預設為 `rgba(255, 255, 255, 0.4)`。
+- `borderRadius`: 按鈕的邊框圓角，預設為 `12px`。
+- `fontSize`: 文字的字體大小，預設為 `16px`。
+- `boxShadow`: 按鈕的陰影效果，預設為 `0 8px 20px rgba(0, 0, 0, 0.1)`。
+- `bottom`: 按鈕距離底部的距離，預設為 `30px`。
+- `right`: 按鈕距離右邊的距離，預設為 `30px`。
+- `iconSize`: 圖標的大小，預設為 `26px`。
+- `textSize`: 文字的大小，預設為 `12px`。
+- `textColor`: 按鈕中文字的顏色，預設為 `#00BFFF`。
+- `transition`: 樣式過渡效果的時間，預設為 `0.3s ease`。
+
+---
 
 ## English
 
@@ -226,10 +232,12 @@ This "Back to Home" button dynamically generates and allows customization of its
 
 ### Usage
 
-1. **Save the Script**: Save the following JavaScript code as `homeButton.js` and upload it to your server.
+1. **Save
+
+ the Script**: Save the following JavaScript code as `homeButton.js` and upload it to your server.
 
     ```javascript
-    // Dynamically load Boxicons library
+    // Dynamically load Boxicons icon library
     (function loadBoxicons() {
         const link = document.createElement('link');
         link.href = 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css';
@@ -237,7 +245,7 @@ This "Back to Home" button dynamically generates and allows customization of its
         document.head.appendChild(link);
     })();
 
-    // Create the back-to-home button
+    // Create the Back to Home button
     (function createHomeButton(config = {}) {
         const defaults = {
             width: '80px',
@@ -251,6 +259,7 @@ This "Back to Home" button dynamically generates and allows customization of its
             right: '30px',
             iconSize: '26px',
             textSize: '12px',
+            textColor: '#00BFFF', // Text color
             transition: '0.3s ease'
         };
 
@@ -273,7 +282,7 @@ This "Back to Home" button dynamically generates and allows customization of its
                 width: ${settings.width};
                 height: ${settings.height};
                 background: ${settings.backgroundColor};
-                color: white;
+                color: ${settings.textColor}; /* Text color setting */
                 border-radius: ${settings.borderRadius};
                 font-size: ${settings.fontSize};
                 box-shadow: ${settings.boxShadow};
@@ -364,10 +373,26 @@ This "Back to Home" button dynamically generates and allows customization of its
             event.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    })(/* Default or user-defined configuration */);
+    })(/* Configuration parameters, for example:
+    {
+        width: '70px',
+        height: '70px',
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        hoverBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+        borderRadius: '8px',
+        fontSize: '14px',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+        bottom: '20px',
+        right: '20px',
+        iconSize: '20px',
+        textSize: '10px',
+        textColor: '#00BFFF', // Text color
+        transition: '0.2s ease'
+    }
+    */);
     ```
 
-2. **Include the Script in Your HTML**: Include the JavaScript file in the `<head>` section of your HTML file and configure the parameters.
+2. **Include the Script in HTML**: Include this JavaScript file in the `<head>` section of your HTML file and configure parameters.
 
     ```html
     <script>
@@ -385,10 +410,11 @@ This "Back to Home" button dynamically generates and allows customization of its
             right: '20px',
             iconSize: '20px',
             textSize: '10px',
+            textColor: '#00BFFF', // Text color
             transition: '0.2s ease'
         };
 
-        // Load the button creation script and pass configuration parameters
+        // Include button creation script and pass configuration parameters
         const script = document.createElement('script');
         script.src = 'path/to/homeButton.js'; // Ensure this path is correct
         script.onload = function() {
@@ -401,15 +427,16 @@ This "Back to Home" button dynamically generates and allows customization of its
 
 ### Configuration Parameters
 
-- `width`: Width of the button, default is `80px`.
-- `height`: Height of the button, default is `80px`.
-- `backgroundColor`: Background color of the button, default is `rgba(255, 255, 255, 0.2)`.
-- `hoverBackgroundColor`: Background color on hover, default is `rgba(255, 255, 255, 0.4)`.
-- `borderRadius`: Border radius of the button, default is `12px`.
-- `fontSize`: Font size of the text, default is `16px`.
-- `boxShadow`: Box shadow effect of the button, default is `0 8px 20px rgba(0, 0, 0, 0.1)`.
-- `bottom`: Distance from the bottom, default is `30px`.
-- `right`: Distance from the right, default is `30px`.
-- `iconSize`: Size of the icon, default is `26px`.
-- `textSize`: Size of the text, default is `12px`.
-- `transition`: Transition time for style changes, default is `0.3s ease`.
+- `width`: The width of the button, default is `80px`.
+- `height`: The height of the button, default is `80px`.
+- `backgroundColor`: The background color of the button, default is `rgba(255, 255, 255, 0.2)`.
+- `hoverBackgroundColor`: The background color when hovered, default is `rgba(255, 255, 255, 0.4)`.
+- `borderRadius`: The border radius of the button, default is `12px`.
+- `fontSize`: The font size of the text, default is `16px`.
+- `boxShadow`: The box shadow effect of the button, default is `0 8px 20px rgba(0, 0, 0, 0.1)`.
+- `bottom`: The distance of the button from the bottom, default is `30px`.
+- `right`: The distance of the button from the right, default is `30px`.
+- `iconSize`: The size of the icon, default is `26px`.
+- `textSize`: The size of the text, default is `12px`.
+- `textColor`: The color of the button text, default is `#00BFFF`.
+- `transition`: The transition effect time, default is `0.3s ease`.
