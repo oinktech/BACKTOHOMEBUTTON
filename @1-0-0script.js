@@ -113,7 +113,7 @@
     window.addEventListener('scroll', function() {
         const scrollY = window.scrollY;
 
-        if (scrollY > 300) {
+        if (scrollY > 100) {
             homeButton.classList.add('show');
             homeButton.style.animation = 'fadeIn 0.5s ease-in-out forwards';
         } else {
